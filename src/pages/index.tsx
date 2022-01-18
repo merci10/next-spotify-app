@@ -1,6 +1,6 @@
 import { Button, Container } from "@chakra-ui/react";
 import type { NextPage } from "next";
-import { useAccessToken} from "../state/access_token"
+import { useAccessToken } from "../state/access_token";
 
 const Home: NextPage = () => {
   const accessToken = useAccessToken();

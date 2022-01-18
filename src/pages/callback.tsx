@@ -1,29 +1,29 @@
 import { NextPage } from "next";
 import { GetServerSideProps } from "next";
-import {useRouter} from "next/router"
+import { useRouter } from "next/router";
 import nookies from "nookies";
-import {useEffect} from "react"
+import { useEffect } from "react";
 import {
   SPOTIFY_API_TOKEN_URL,
   SPOTIFY_CLIENT_ID,
   SPOTIFY_CLIENT_SECRET,
   SPOTIFY_REDIRECT_URI,
 } from "../common/constant";
-import {useSetAccessToken} from "../state/access_token"
+import { useSetAccessToken } from "../state/access_token";
 
 type Props = {
   access_token: string;
 };
 
 const Callback: NextPage<Props> = ({ access_token }) => {
-  const setAccessToken = useSetAccessToken()
-  const router = useRouter()
+  const setAccessToken = useSetAccessToken();
+  const router = useRouter();
 
   useEffect(() => {
-    setAccessToken(access_token)
+    setAccessToken(access_token);
 
-    router.replace("/")
-  },[setAccessToken, access_token,router])
+    router.replace("/");
+  }, [setAccessToken, access_token, router]);
 
   return null;
 };
