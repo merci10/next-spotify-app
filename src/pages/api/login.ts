@@ -17,7 +17,7 @@ const handler: NextApiHandler = (req, res) => {
       client_id: SPOTIFY_CLIENT_ID,
       scope: SPOTIFY_SCOPES.join(" "),
       redirect_uri: SPOTIFY_REDIRECT_URI,
-      state: state,
+      state: state, // clientIdを使った第三者のアクセスを拒否るために使う
     });
 
     const secure = !req.headers.host?.includes("localhost");
