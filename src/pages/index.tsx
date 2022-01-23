@@ -250,23 +250,23 @@ const Home: NextPage = () => {
         {/* center */}
         <Box>
           <HStack justifyContent="center">
-            <IconButton aria-label="shuffle" icon={<MdShuffle />} size="lg" />
+            <IconButton aria-label="shuffle" icon={<Icon as={MdShuffle} fontSize="xl" />} size="lg" />
             <IconButton
               aria-label="skip previous"
-              icon={<MdSkipPrevious />}
+              icon={<Icon as={MdSkipPrevious} fontSize="3xl" />}
               size="lg"
             />
             <IconButton
               aria-label="play music"
-              icon={<MdPlayCircleFilled />}
+              icon={<Icon as={MdPlayCircleFilled} fontSize="3xl" />}
               size="lg"
             />
             <IconButton
               aria-label="skip next"
-              icon={<MdSkipNext />}
+              icon={<Icon as={MdSkipNext} fontSize="3xl" />}
               size="lg"
             />
-            <IconButton aria-label="repeat" icon={<MdRepeat />} size="lg" />
+            <IconButton aria-label="repeat" icon={<Icon as={MdRepeat} fontSize="xl" />} size="lg" />
           </HStack>
           <HStack>
             <Text as="span">0:00</Text>
