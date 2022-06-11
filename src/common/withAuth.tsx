@@ -1,9 +1,9 @@
 import { NextPage } from "next";
 import { useRouter } from "next/router";
 import { useEffect } from "react";
-import { useAccessToken } from "../state/access_token";
+import { useAccessToken } from "../state/spotifyClient";
 
-const withAuth = <Props,>(Component: NextPage<Props>) => {
+export const withAuth = <Props,>(Component: NextPage<Props>) => {
   const WithAuth: NextPage<Props> = (props) => {
     const token = useAccessToken();
     const router = useRouter();
@@ -23,5 +23,3 @@ const withAuth = <Props,>(Component: NextPage<Props>) => {
 
   return WithAuth;
 };
-
-export default withAuth;

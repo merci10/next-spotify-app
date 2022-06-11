@@ -3,15 +3,15 @@ import {
   WebPlaybackSDK as SpotifyWebPlaybackSDK,
   WebPlaybackSDKProps,
 } from "react-spotify-web-playback-sdk";
-import { useAccessToken } from "../state/access_token";
+import { useAccessToken } from "../state/spotifyClient";
 
 export const WebPlaybackSDK: VFC<{ children: ReactNode }> = ({ children }) => {
-  const accessToken = useAccessToken();
+  const token = useAccessToken();
   const getOAuthToken: WebPlaybackSDKProps["getOAuthToken"] = useCallback(
     (callback) => {
-      accessToken && callback(accessToken);
+      token && callback(token.access_token);
     },
-    [accessToken]
+    [token]
   );
 
   return (
